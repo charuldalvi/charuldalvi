@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="101" height="5768" viewBox="0 0 101 5768">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.889" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#545870" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7980a6"/>
+    </radialGradient>
+  </defs>
+  <g id="Group_899" data-name="Group 899" transform="translate(-633 -1047)">
+    <path id="Path_3397" data-name="Path 3397" d="M38,0H0" transform="translate(645.5 2432.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <path id="Path_3396" data-name="Path 3396" d="M38,0H0" transform="translate(645.5 2986.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <path id="Path_3395" data-name="Path 3395" d="M38,0H0" transform="translate(645.5 3536.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <path id="Path_3394" data-name="Path 3394" d="M38,0H0" transform="translate(645.5 4087.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <path id="Path_3393" data-name="Path 3393" d="M38,0H0" transform="translate(645.5 4638.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <path id="Path_3392" data-name="Path 3392" d="M38,0H0" transform="translate(645.5 5189.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_38" data-name="Line 38" x1="38" transform="translate(645.5 1332.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <g id="Group_526" data-name="Group 526" transform="translate(0 197)">
+      <line id="Line_41" data-name="Line 41" x1="38" transform="translate(645.5 1686.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    </g>
+    <line id="Line_55" data-name="Line 55" x1="38" transform="translate(645.5 5741.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <path id="Path_3391" data-name="Path 3391" d="M38,0H0" transform="translate(645.5 6291.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_39" data-name="Line 39" x1="38" transform="translate(683.5 1452.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_40" data-name="Line 40" x1="38" transform="translate(683.5 2003.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_43" data-name="Line 43" x1="38" transform="translate(683.5 2588.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_45" data-name="Line 45" x1="38" transform="translate(683.5 3105.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_46" data-name="Line 46" x1="38" transform="translate(683.5 3656.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_48" data-name="Line 48" x1="38" transform="translate(683.5 4207.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_50" data-name="Line 50" x1="38" transform="translate(683.5 4758.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_52" data-name="Line 52" x1="38" transform="translate(683.5 5309.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <line id="Line_54" data-name="Line 54" x1="38" transform="translate(683.5 5860.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+    <g id="Group_896" data-name="Group 896">
+      <rect id="Rectangle_3349" data-name="Rectangle 3349" width="100" height="30" rx="10" transform="translate(634 1047)" fill="#545870" opacity="0.5"/>
+      <text id="Nagpur" transform="translate(646 1069)" fill="#f9f9f9" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">NAGPUR</tspan></text>
+    </g>
+    <g id="Group_897" data-name="Group 897">
+      <rect id="Rectangle_3350" data-name="Rectangle 3350" width="100" height="30" rx="10" transform="translate(633 6785)" fill="#545870" opacity="0.5"/>
+      <text id="MUMBAI" transform="translate(648 6806)" fill="#f9f9f9" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">MUMBAI</tspan></text>
+    </g>
+    <g id="Group_898" data-name="Group 898">
+      <g id="Group_878" data-name="Group 878">
+        <rect id="Rectangle_3353" data-name="Rectangle 3353" width="40" height="40" rx="20" transform="matrix(1, 0.017, -0.017, 1, 663.698, 6727)" opacity="0.12" fill="url(#radial-gradient)" style="mix-blend-mode: lighten;isolation: isolate"/>
+        <rect id="Rectangle_3352" data-name="Rectangle 3352" width="30" height="30" rx="15" transform="matrix(1, 0.017, -0.017, 1, 668.523, 6732)" opacity="0.25" fill="url(#radial-gradient)" style="mix-blend-mode: lighten;isolation: isolate"/>
+      </g>
+      <g id="Group_895" data-name="Group 895">
+        <g id="Group_879" data-name="Group 879" transform="translate(0 -5631)">
+          <rect id="Rectangle_3353-2" data-name="Rectangle 3353" width="40" height="40" rx="20" transform="matrix(1, 0.017, -0.017, 1, 663.698, 6727)" opacity="0.12" fill="url(#radial-gradient)" style="mix-blend-mode: lighten;isolation: isolate"/>
+          <rect id="Rectangle_3352-2" data-name="Rectangle 3352" width="30" height="30" rx="15" transform="matrix(1, 0.017, -0.017, 1, 668.523, 6732)" opacity="0.25" fill="url(#radial-gradient)" style="mix-blend-mode: lighten;isolation: isolate"/>
+        </g>
+        <g id="Group_504" data-name="Group 504" transform="translate(0 197)">
+          <line id="Line_37" data-name="Line 37" y2="5627" transform="translate(683.5 923.5)" fill="none" stroke="#32364f" stroke-width="5"/>
+          <circle id="Ellipse_53" data-name="Ellipse 53" cx="9" cy="9" r="9" transform="translate(674 910)" fill="#32364f"/>
+          <circle id="Ellipse_54" data-name="Ellipse 54" cx="9" cy="9" r="9" transform="translate(674 6541)" fill="#32364f"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

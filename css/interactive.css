@@ -1,0 +1,2276 @@
+@font-face {
+  font-family: "Planer-Regular";
+  src: url(../assets/fonts/planer/Planer-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Bold";
+  src: url(../assets/fonts/Rogan/Rogan-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Medium";
+  src: url(../assets/fonts/Rogan/Rogan-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Regular";
+  src: url(../assets/fonts/Rogan/Rogan-Regular.ttf);
+}
+
+:root {
+  --scenePerspective: 1;
+  --scenePerspectiveOriginX: 50;
+  --scenePerspectiveOriginY: 30;
+  --itemZ: 2.5;
+  --cameraSpeed: 150;
+  --cameraZ: 0;
+  --viewportHeight: 0;
+}
+
+.big-nav-bg {
+  width: 100%;
+  height: 100px;
+}
+
+#big-nav {
+  padding: 12px 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
+#big-nav .town-names {
+  width: 250px;
+  height: 0px;
+  background-color: #13141b;
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  top: 122%;
+  left: 69.2%;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#big-nav .town-names .town-list {
+  height: 0px;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  margin: 20px 20px 0 10px;
+  overflow-y: hidden;
+  -webkit-transition: overflow-y .8s ease-in;
+  transition: overflow-y .8s ease-in;
+}
+
+#big-nav .town-names .town-list:hover {
+  overflow-y: auto;
+}
+
+#big-nav .town-names .town-list li {
+  color: #fff;
+  margin: 5px 15px;
+  font-weight: 700;
+  padding: 8px;
+  cursor: pointer;
+  -webkit-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+}
+
+#big-nav .town-names .town-list li:hover {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.front-reveal-layer {
+  width: 1285px;
+  height: 700px;
+  background-color: #242634;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.main-container {
+  width: 1285px;
+  height: auto;
+  border-radius: 30px;
+  position: relative;
+}
+
+#frame {
+  z-index: 10;
+}
+
+.fullscreen-outer {
+  width: 60px;
+  height: 57px;
+  position: absolute;
+  bottom: 44px;
+  left: 30px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#13141B), to(#242634));
+  background-image: linear-gradient(#13141B, #242634);
+  opacity: 0.95;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.fullscreen-outer .fullscreen-inner {
+  width: 40px;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+.fullscreen-outer .fullscreen-inner:hover {
+  background-color: rgba(62, 67, 69, 0.95);
+}
+
+#unity-container {
+  height: auto;
+  margin-top: 20px;
+}
+
+.experience {
+  padding: 100px 0 100px 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: relative;
+}
+
+.experience h1 {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: Rogan-Bold, sans-serif;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.experience .line-container {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.experience .line-container #firstLottie {
+  width: 25.7%;
+  margin-left: 19%;
+}
+
+.experience .line-empty-container {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #13141b;
+  border-bottom-left-radius: 130px;
+  border-bottom-right-radius: 130px;
+}
+
+.scroll-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  margin-top: 80px;
+}
+
+.module {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.green {
+  width: 720px;
+  padding: 100px 50px;
+}
+
+.green .city__text {
+  font-size: 6vw;
+  line-height: 0.8;
+  margin: 0 2vw 0 14vw;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.1;
+}
+
+.yellow {
+  width: 1250px;
+  padding: 100px 0px;
+}
+
+.purple {
+  width: 1250px;
+  padding: 100px 0px;
+}
+
+.orange {
+  width: 1250px;
+  padding: 100px 0px;
+}
+
+.blue {
+  width: 1250px;
+  padding: 100px 0px;
+}
+
+.red {
+  width: 800px;
+  padding: 100px 0px;
+}
+
+.red .city__text {
+  font-size: 6vw;
+  line-height: 0.8;
+  margin: 0 10vw 0 5vw;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.1;
+}
+
+.new-town-card {
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 250px;
+  height: 450px;
+  background-color: #13141b;
+  border: 1.5px solid #575764;
+  -webkit-box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.new-town-card img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: absolute;
+  border: 2px solid #13141b;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.new-town-card .img-one {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: absolute;
+  border: 2px solid #13141b;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../assets/images/new_map.png);
+  background-size: cover;
+  background-position: left 40%;
+  transition: all 1s ease;
+}
+
+.new-town-card .img-two {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  position: absolute;
+  border: 2px solid #13141b;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../assets/images/new_map.png);
+  background-size: cover;
+  background-position: left 100% top 100%;
+  transition: all 1s ease;
+}
+
+.new-town-card .img-text {
+  border-radius: 15px;
+  border-top: 1.5px solid #686870;
+  background-color: #13141b;
+  -webkit-box-shadow: 0px -5px 10px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px -5px 10px 1px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px 20px 30px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translate(0, 122px);
+          transform: translate(0, 122px);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  display: inline-block;
+  z-index: 1;
+}
+
+.new-town-card .img-text h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.new-town-card .img-text .nt-key {
+  color: #fff;
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+
+.new-town-card .img-text .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.new-town-card .img-text .d-key {
+  color: #fff;
+  opacity: 0.5;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.new-town-card .img-text .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.new-town-card .img-text .btn-outline-success {
+  width: 186px;
+  color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.new-town-card:hover {
+  -webkit-transform: translate(0, -40px);
+          transform: translate(0, -40px);
+}
+
+.new-town-card:hover img {
+  height: 300px;
+}
+
+.new-town-card:hover .img-one {
+  height: 300px;
+}
+
+.new-town-card:hover .img-two {
+  height: 300px;
+}
+
+.new-town-card:hover .img-text {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.custom-accordion {
+  margin: 100px 0 20px 0;
+}
+
+.custom-accordion .nt1-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt1-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt1-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt1-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt1-card .small-card-details .arrow1 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt1-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt1-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt1-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt1-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt1-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt1-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt1-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt1-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt2-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt2-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt2-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt2-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt2-card .small-card-details .arrow2 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt2-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt2-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt2-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt2-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt2-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt2-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt2-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt2-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt3-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt3-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt3-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt3-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt3-card .small-card-details .arrow3 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt3-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt3-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt3-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt3-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt3-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt3-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt3-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt3-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt4-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt4-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt4-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt4-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt4-card .small-card-details .arrow4 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt4-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt4-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt4-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt4-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt4-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt4-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt4-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt4-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt5-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt5-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt5-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt5-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt5-card .small-card-details .arrow5 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt5-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt5-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt5-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt5-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt5-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt5-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt5-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt5-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt6-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt6-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt6-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt6-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt6-card .small-card-details .arrow6 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt6-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt6-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt6-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt6-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt6-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt6-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt6-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt6-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt7-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt7-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt7-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt7-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt7-card .small-card-details .arrow7 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt7-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt7-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt7-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt7-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt7-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt7-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt7-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt7-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt8-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt8-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt8-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt8-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt8-card .small-card-details .arrow8 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt8-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt8-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt8-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt8-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt8-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt8-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt8-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt8-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt9-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt9-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt9-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt9-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt9-card .small-card-details .arrow9 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt9-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt9-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt9-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt9-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt9-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt9-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt9-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt9-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt10-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt10-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt10-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt10-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt10-card .small-card-details .arrow10 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt10-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt10-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt10-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt10-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt10-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt10-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt10-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt10-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt11-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt11-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt11-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt11-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt11-card .small-card-details .arrow11 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt11-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt11-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt11-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt11-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt11-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt11-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt11-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt11-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt12-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt12-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt12-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt12-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt12-card .small-card-details .arrow12 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt12-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt12-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt12-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt12-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt12-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt12-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt12-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt12-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt13-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt13-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt13-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt13-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt13-card .small-card-details .arrow13 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt13-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt13-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt13-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt13-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt13-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt13-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt13-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt13-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt14-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt14-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt14-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt14-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt14-card .small-card-details .arrow14 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt14-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt14-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt14-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt14-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt14-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt14-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt14-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt14-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt15-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt15-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt15-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt15-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt15-card .small-card-details .arrow15 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt15-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt15-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt15-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt15-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt15-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt15-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt15-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt15-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt16-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt16-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt16-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt16-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt16-card .small-card-details .arrow16 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt16-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt16-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt16-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt16-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt16-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt16-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt16-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt16-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt17-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt17-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt17-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt17-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt17-card .small-card-details .arrow17 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt17-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt17-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt17-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt17-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt17-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt17-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt17-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt17-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt18-card {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt18-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt18-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt18-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt18-card .small-card-details .arrow18 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt18-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt18-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt18-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt18-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt18-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt18-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt18-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt18-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.custom-accordion .nt19-card {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(84, 88, 112, 0.2)), to(#2A2C38));
+  background-image: linear-gradient(to right, rgba(84, 88, 112, 0.2), #2A2C38);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 16px 0;
+  margin-bottom: 10px;
+  height: 80px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.custom-accordion .nt19-card .small-card-details {
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.custom-accordion .nt19-card .small-card-details .town-id {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Medium, sans-serif;
+}
+
+.custom-accordion .nt19-card .small-card-details .nt-value {
+  color: #fff;
+  font-size: 30px;
+  font-family: Rogan-Medium, sans-serif;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt19-card .small-card-details .arrow19 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .nt19-card .big-card-details {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: translate(0, 20%);
+          transform: translate(0, 20%);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.custom-accordion .nt19-card .big-card-details h4 {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.custom-accordion .nt19-card .big-card-details h5 {
+  color: #fff;
+}
+
+.custom-accordion .nt19-card .big-card-details h2 {
+  color: #fc8a38;
+  font-size: 40px;
+  font-family: Rogan-Bold, sans-serif;
+}
+
+.custom-accordion .nt19-card .big-card-details .nt-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.custom-accordion .nt19-card .big-card-details .nt-value {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.custom-accordion .nt19-card .big-card-details .d-key {
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-top: 4px;
+}
+
+.custom-accordion .nt19-card .big-card-details .d-value {
+  color: #fff;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+/*# sourceMappingURL=interactive.css.map */

@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <title>MahaVistaar - A Project by MSRDC</title>
+  </head>
+  <body data-barba="wrapper">
+
+   
+
+
+    <main data-barba="container">
+
+      <!-- <ul class="transition">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul> -->
+
+      <!--Navbar-->
+      <div class="big-nav-bg"></div>
+
+      <nav id="big-nav">
+        <div class="container-fluid" style="position: relative">
+          <div class="row d-flex justify-content-around align-items-center">
+            <a href="index.html#towns">
+              <lottie-player
+                hover
+                mode="normal"
+                src="./assets/lottie/Back Button V3.json"
+                style="width: 100px; margin-top: 20px"
+              >
+              </lottie-player>
+            </a>
+            <a href="index.html">
+              <img
+                src="./assets/images/Maha Vistaar Logo.svg"
+                alt="MahaVistaar"
+                width="180px"
+                height="45px"
+              />
+            </a>
+            <div class="d-flex flex-column">
+              <lottie-player
+                onclick="openDropDown()"
+                id="search"
+                mode="normal"
+                src="./assets/lottie/Towns Button V3.json"
+                style="width: 100px; margin-top: 20px; cursor: pointer"
+              >
+              </lottie-player>
+              <div class="town-names">
+                <ul class="town-list">
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 1
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 2
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 3
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 4
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 5
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 6
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 7
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 8
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 9
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 10
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 11
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 12
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 13
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 14
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 15
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 16
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 17
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 18
+                  </li>
+                  <li id="http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html">
+                    New Town 19
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Unity Frame -->
+      
+      <div
+        id="unity-container"
+        class="container-fluid d-flex justify-content-center align-items-center"
+      >
+        <div id="unity" class="main-container">
+          <iframe
+            id="frame"
+            src=""
+            name="town"
+            scrolling="yes"
+            frameborder="1"
+            width="1285px"
+            height="700px"
+            style="border-radius: 15px; border: 0px"
+          >
+          </iframe>
+          <div class="fullscreen-outer">
+            <div class="fullscreen-inner">
+              <lottie-player
+                id="fullscreen"
+                hover
+                loop
+                mode="normal"
+                src="./assets/lottie/Full Screen.json"
+                style="width: 25px; height: 25px"
+              >
+              </lottie-player>
+            </div>
+          </div>
+          <!-- <div class="front-reveal-layer"></div> -->
+        </div>
+      </div>
+
+      <!-- Experience Other Town -->
+      <section class="experience">
+        <h1 class="text-center">Experience Other Towns</h1>
+
+
+        <div class="custom-accordion">
+          <div class="town nt1-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT1</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Hingana</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow1" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                    <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                    <div>
+                    <h2>NT1</h2>
+                    <p class="nt-key">New Town</p>
+                    <h6 class="nt-value">Hingana</h6>
+                    <p class="d-key">District</p>
+                    <h6 class="d-value">Nagpur</h6>
+                    <div class="mt-4">
+                      <lottie-player
+                      id="nt1-btn"
+                      hover
+                      mode="normal"
+                      src="./assets/lottie/Explore Button V4.json"
+                      style="width: 220px; cursor: pointer;"
+                    >
+                    </lottie-player>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt2-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT2</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Kelzar</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow2" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT2</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Kelzar</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Nagpur</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt2-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt3-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT3</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Virul</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow3" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>  
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT3</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Virul</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Wardha</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt3-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt4-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT4</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Dhamangaon</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow4" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>    
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT4</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Dhamangaon</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Amravati</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt4-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt5-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT5</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Nandgaon</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow5" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div> 
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT5</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Nandgaon</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Amravati</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt5-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt6-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT6</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Karanja</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow6" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div> 
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT6</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Karanja</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Washim</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt6-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt7-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT7</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Manglurpir</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow7" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div> 
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT7</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Manglurpir</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Washim</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt7-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt8-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT8</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Malegaon</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow8" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div> 
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                    <h2>NT8</h2>
+                    <p class="nt-key">New Town</p>
+                    <h6 class="nt-value">Malegaon</h6>
+                    <p class="d-key">District</p>
+                    <h6 class="d-value">Washim</h6>
+                    <div class="mt-4">
+                      <lottie-player
+                      id="nt8-btn"
+                      hover
+                      mode="normal"
+                      src="./assets/lottie/Explore Button V4.json"
+                      style="width: 220px; cursor: pointer;"
+                    >
+                    </lottie-player>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt9-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT9</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Mehkar</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow9" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                    <h2>NT9</h2>
+                    <p class="nt-key">New Town</p>
+                    <h6 class="nt-value">Mehkar</h6>
+                    <p class="d-key">District</p>
+                    <h6 class="d-value">Buldhana</h6>
+                    <div class="mt-4">
+                      <lottie-player
+                      id="nt9-btn"
+                      hover
+                      mode="normal"
+                      src="./assets/lottie/Explore Button V4.json"
+                      style="width: 220px; cursor: pointer;"
+                    >
+                    </lottie-player>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt10-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT10</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Sawargaon Mal</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow10" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT10</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Sawargaon Mal</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Buldhana</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt10-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt11-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT11</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Jamwadi</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow11" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT11</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Jamwadi</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Jalna</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt11-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt12-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT12</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Hadas Pimpalgaon</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow12" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT12</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Hadas Pimpalgaon</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Aurangabad</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt12-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt13-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT13</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Ghaigaon - Jambhargaon</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow13" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div> 
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT13</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Aurangabad</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt13-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt14-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT14</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Babtara</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow14" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div> 
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT14</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Babtara</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Aurangabad</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt14-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt15-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT15</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Savali Vihir</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow15" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>  
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT15</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Savali Vihir</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Aurangabad</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt15-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt16-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT16</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Fugale</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow16" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT16</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Fugale</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Ahmednagar</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt16-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt17-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT17</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Kasgaon</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow17" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT17</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Kasgaon</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Thane</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt17-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt18-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT18</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Lenad</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow18" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+              
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT18</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Lenad</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Thane</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt18-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="town nt19-card">
+            <div class="small-card-details row d-flex justify-content-around align-items-center">
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <h2 class="town-id">NT19</h2>
+              </div>
+              <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <h2 class="nt-value text-center">Chinchavali</h2>
+              </div>
+              <div class="col-lg-3 d-flex justify-content-center align-items-center">
+                <img class="arrow19" src="./assets/images/back_btn.png" alt="" width="16" height="16">
+              </div>
+              
+            </div>
+            <div class="big-card-details">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 d-flex flex-column justify-content-end align-items-start px-5">
+                      <h5>Land Area</h5>
+                    <h4>1181 H.A</h4>
+                  </div>
+                  <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-5">
+                    <div>
+                      <h2>NT19</h2>
+                      <p class="nt-key">New Town</p>
+                      <h6 class="nt-value">Chinchavali</h6>
+                      <p class="d-key">District</p>
+                      <h6 class="d-value">Thane</h6>
+                      <div class="mt-4">
+                        <lottie-player
+                        id="nt19-btn"
+                        hover
+                        mode="normal"
+                        src="./assets/lottie/Explore Button V4.json"
+                        style="width: 220px; cursor: pointer;"
+                      >
+                      </lottie-player>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="scroll-container d-flex align-items-center">
+          <div class="module green">
+            <div class="row d-flex align-items-center">
+              <span class="new-town-card mr-3 ml-5">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT1</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt1-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-one"></div> 
+                <span class="img-text">
+                  <h2>NT2</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt2-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+            </div>
+            
+          </div>
+          <div class="module yellow">
+            <div class="row d-flex align-items-center">
+              <span class="new-town-card mr-3 ml-1">
+                <div class="img-two"></div> 
+                <span class="img-text">
+                  <h2>NT3</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt3-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT4</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt4-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-two"></div>
+                <span class="img-text">
+                  <h2>NT5</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt5-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-one"></div>
+                <span class="img-text">
+                  <h2>NT6</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt6-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="module purple">
+            <div class="row d-flex align-items-center">
+              <span class="new-town-card mr-3 ml-1">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT7</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt7-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-two"></div>
+                <span class="img-text">
+                  <h2>NT8</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt8-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT9</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt9-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-one"></div>
+                <span class="img-text">
+                  <h2>NT10</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt10-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="module orange">
+            <div class="row d-flex align-items-center">
+              <span class="new-town-card mr-3 ml-1">
+                <div class="img-two"></div>
+                <span class="img-text">
+                  <h2>NT11</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt11-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-one"></div>
+                <span class="img-text">
+                  <h2>NT12</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt12-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT13</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt13-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-two"></div>
+                <span class="img-text">
+                  <h2>NT14</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt14-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="module blue">
+            <div class="row d-flex align-items-center">
+              <span class="new-town-card mr-3 ml-1">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT15</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt15-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-two"></div>
+                <span class="img-text">
+                  <h2>NT16</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt16-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <div class="img-one"></div>
+                <span class="img-text">
+                  <h2>NT17</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt17-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+              <span class="new-town-card mr-3 ml-5">
+                <img src="./assets/images/new_map.png" alt="Map">
+                <span class="img-text">
+                  <h2>NT18</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt18-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+            </div>
+          </div>
+          
+          <div class="module red">
+            <div class="row d-flex align-items-center">
+              <span class="new-town-card mr-3 ml-1">
+                <div class="img-two"></div>
+                <span class="img-text">
+                  <h2>NT19</h2>
+                  <p class="nt-key">New Town</p>
+                  <h6 class="nt-value">Ghaigaon-Jambhargaon</h6>
+                  <p class="d-key">District</p>
+                  <h6 class="d-value">Aurangabad</h6>
+                  <div class="text-center mt-4">
+                    <div id="nt19-btn" class="btn btn-outline-success">Explore</div>
+                  </div>  
+                </span>
+              </span>
+          </div>
+        </div>
+        </div>
+         -->
+        
+         
+        <div class="line-empty-container"></div>
+      </section>
+    
+
+      <!-- Footer Section -->
+
+      <section class="footer">
+        <div class="footer-container">
+          <div class="container-fluid d-flex justify-content-center">
+            <div class="row d-flex justify-content-around">
+              <div class="col-lg-4">
+                <img
+                  id="mahavistaar"
+                  src="./assets/images/Maha Vistaar Logo.svg"
+                  alt="MahaVistaar"
+                />
+                <img
+                  id="msrdc"
+                  src="./assets/images/msrdc.svg"
+                  alt="MahaVistaar"
+                />
+                <div class="address">
+                  <p>Corporate Office Address :</p>
+                  <p class="address-text">
+                    MSRDC Office Premises, K. C. Marg, Near Lilavati Hospital,
+                    Bandra (W), Mumbai-400050, India.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 mx-auto d-flex flex-column align-items-center"
+              >
+                <p style="color: #fff; opacity: 0.5">Important Links</p>
+                <ul class="important-links">
+                  <li>Information</li>
+                  <li>3D interactive</li>
+                  <li>Contact</li>
+                </ul>
+              </div>
+
+              <div class="col-lg-4">
+                <p style="color: #fff; opacity: 0.5">About Us</p>
+                <p
+                  style="
+                    width: 416px;
+                    color: #fff;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                  "
+                >
+                  MSRDC Maha vistaar aims at providing an impetus to the overall
+                  development of rural areas by attracting domestic and foreign
+                  investment.
+                </p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1931990.842313098!2d72.798905!3d18.957067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x19f9e3894e2b8919!2sPriyadarshini%20Park!5e0!3m2!1sen!2sus!4v1610207846694!5m2!1sen!2sus"
+                  width="400"
+                  height="200"
+                  frameborder="0"
+                  style="border: 0; border-radius: 10px"
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <hr class="mt-4" />
+          <div class="row mt-1">
+            <div class="col-lg-6 text-left">
+              <div class="row">
+                <a href="#" class="mr-3 ml-3 privacy">Privacy Policy</a>
+                <a href="#" class="terms">Terms of Usage</a>
+              </div>
+            </div>
+            <div class="col-lg-6 text-right">
+              <div class="row d-flex justify-content-end">
+                <a href="#" class="mr-3">
+                  <img src="./assets/images/Facebook.svg" alt="" />
+                </a>
+                <a href="#" class="mr-3">
+                  <img src="./assets/images/instagram.svg" alt="" />
+                </a>
+                <a href="#" class="mr-3">
+                  <img src="./assets/images/Linkedin.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        
+      </section>
+    </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/CSSRulePlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      var unity_frame = document.querySelector("#frame");
+      var unity_container = document.querySelector("#unity");
+      var link;
+      var isCliked = false;
+      var button = document.querySelector("#fullscreen");
+      var big_nav = document.querySelector("#big-nav");
+      var small_nav = document.querySelector(".small-nav");
+      var fullscreen_container = document.querySelector(".fullscreen-outer");
+      var town_dropdown = document.querySelector(".town-names");
+      var town_list = document.querySelector(".town-list");
+      var search = document.querySelector("#search");
+      var link = document.querySelector(".town-list");
+      let container = document.querySelector(".scroll-container");
+      AttachEvent(link, "click", EventHandler);
+
+      // towns
+      var town1 = document.querySelector("#town1");
+      var town2 = document.querySelector("#town2");
+
+      // onStart
+
+      gsap.registerPlugin(CSSRulePlugin);
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.onscroll = function () {
+       scrollFunction();
+      };
+
+      
+
+      var tl = gsap.timeline();
+
+      tl.to(big_nav, {
+        y: "0",
+        ease: "power4.out",
+        delay: 1.2,
+        duration: 1,
+      }).from(
+        unity_container,
+        { y: "140",opacity: 0, ease: "power4.out", delay: 1, duration: 1 },
+        +1.2
+      );
+
+     
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 25 ||
+          document.documentElement.scrollTop > 25
+        ) {
+          big_nav.style.padding = "10px";
+          big_nav.style.width = "800px";
+          big_nav.style.borderRadius = "10px";
+          big_nav.style.position = "fixed";
+          big_nav.style.top = "22px";
+          big_nav.style.left = "50%";
+          big_nav.style.right = "0";
+          big_nav.style.transform = "translate(-50%, 0)";
+          big_nav.style.zIndex = "1";
+          big_nav.style.transition =
+            "all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1)";
+          big_nav.style.backgroundColor = "rgba(19, 20, 27, 0.85)";
+        } else {
+          big_nav.style.width = "100%";
+          big_nav.style.padding = "18px 48px";
+          big_nav.style.borderRadius = "0px";
+          big_nav.style.transform = "translate(0 0)";
+        }
+      }
+
+      function smoothScroll(target, duration) {
+        var target = document.querySelector(target);
+        var targetPosition = target.getBoundingClientRect().top;
+        var startPosition = window.pageYOffset;
+        var distance = targetPosition - startPosition;
+        var startTime = null;
+
+        function animation(currentTime) {
+          if (startTime === null) {
+            startTime = currentTime;
+          }
+
+          var timeElapsed = currentTime - startTime;
+          var run = ease(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return (c / 2) * t * t + b;
+          t--;
+          return (-c / 2) * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+      }
+
+      function getlink() {
+        link = localStorage.getItem("link");
+        setLink(link);
+      }
+
+      getlink();
+
+      function setLink(link) {
+        unity_frame.src = link;
+      }
+
+      function openFullscreen() {
+        if (unity_frame.requestFullscreen) {
+          unity_frame.requestFullscreen();
+        } else if (unity_frame.webkitRequestFullscreen) {
+          /* Safari */
+
+          unity_frame.webkitRequestFullscreen();
+        } else if (unity_frame.msRequestFullscreen) {
+          /* IE11 */
+
+          unity_frame.msRequestFullscreen();
+        }
+      }
+
+      button.addEventListener("click", function () {
+        if (!isCliked) {
+          openFullscreen();
+        }
+      });
+
+      var isOpen = false;
+
+      function openDropDown() {
+        isOpen = !isOpen;
+
+        if (!isOpen) {
+          search.setDirection(-1);
+
+          shrinkDropDown();
+        } else {
+          search.setDirection(1);
+          town_dropdown.style.height = "250px";
+          town_dropdown.style.opacity = "0.85";
+          town_dropdown.style.visibility = "visible";
+
+          town_list.style.opacity = "1";
+          town_list.style.visibility = "visible";
+          town_list.style.height = "220px";
+        }
+        search.setSpeed(3);
+        search.play();
+      }
+
+      function shrinkDropDown() {
+        town_dropdown.style.height = "0px";
+        town_dropdown.style.opacity = "0";
+        town_dropdown.style.visibility = "hidden";
+
+        town_list.style.opacity = "0";
+        town_list.style.visibility = "hidden";
+        town_list.style.height = "0px";
+      }
+
+      function AttachEvent(element, type, handler) {
+        if (element.addEventListener)
+          element.addEventListener(type, handler, false);
+        else element.attachEvent("on" + type, handler);
+      }
+
+      function EventHandler(e) {
+        setLink(e.target.id);
+        town_dropdown.style.height = "0px";
+        town_dropdown.style.opacity = "0";
+        town_dropdown.style.visibility = "hidden";
+
+        town_list.style.opacity = "0";
+        town_list.style.visibility = "hidden";
+        town_list.style.height = "0px";
+
+        search.setDirection(-1);
+        search.play();
+      }
+
+
+      var experience = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#unity-container",
+          start: "top center + 200",
+          onEnter: () => {
+            gsap.to(big_nav, { opacity: "1", ease: "ease.in" });
+            big_nav.style.visibility = "visible";
+         
+          },
+          onEnterBack: () => {
+            gsap.to(big_nav, { opacity: "1", ease: "ease.in" });
+            big_nav.style.visibility = "visible";
+         
+            
+          },
+          onLeave: () => {
+            gsap.to(big_nav, { opacity: "0", ease: "ease.in" });
+            big_nav.style.visibility = "hidden";
+            gsap.to(container, {visibility : "visible"});
+          },
+        },
+      });
+
+
+
+
+
+      var bignav = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".big-nav",
+          start: "top center",
+          onEnter: () => {
+            gsap.to(big_nav, { opacity: "1", ease: "ease.in" });
+            big_nav.style.visibility = "visible";
+           },
+          onEnterBack: () => {
+            gsap.to(big_nav, { opacity: "1", ease: "ease.in" });
+            big_nav.style.visibility = "visible";
+            
+          },
+          onLeave: () => {
+            gsap.to(big_nav, { opacity: "0", ease: "ease.in" });
+            big_nav.style.visibility = "hidden";
+          },
+        },
+      })
+
+
+      var exp = document.querySelector(".experience");
+
+      var test = gsap.timeline({
+        scrollTrigger: {
+          trigger: exp,
+          start: "top bottom",
+        },
+      });
+
+     
+
+// gsap.to(container, {
+//   x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+//   ease: "power2.in",
+//   scrollTrigger: {
+//     trigger: container,
+//     invalidateOnRefresh: true,
+//     pin: true,
+//     markers: false,
+//     scrub: 1,
+//     end: () => {
+//       "+=" + container.offsetWidth + 400
+//     },
+//   }
+// })
+
+
+// Experience Other Towns
+
+var town1 = document.querySelector("#nt1-btn");
+var town2 = document.querySelector("#nt2-btn");
+var town3 = document.querySelector("#nt3-btn");
+var town4 = document.querySelector("#nt4-btn");
+var town5 = document.querySelector("#nt5-btn");
+var town6 = document.querySelector("#nt6-btn");
+var town7 = document.querySelector("#nt7-btn");
+var town8 = document.querySelector("#nt8-btn");
+var town9 = document.querySelector("#nt9-btn");
+var town10 = document.querySelector("#nt10-btn");
+var town11 = document.querySelector("#nt11-btn");
+var town12 = document.querySelector("#nt12-btn");
+var town13 = document.querySelector("#nt13-btn");
+var town14 = document.querySelector("#nt14-btn");
+var town15 = document.querySelector("#nt15-btn");
+var town16 = document.querySelector("#nt16-btn");
+var town17 = document.querySelector("#nt17-btn");
+var town18 = document.querySelector("#nt18-btn");
+var town19 = document.querySelector("#nt19-btn");
+
+
+town1.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town2.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town3.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town4.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town5.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town6.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town7.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town8.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town9.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town10.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town11.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town12.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town13.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town14.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town15.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town16.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town17.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town18.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+town19.addEventListener("click", () => {
+    smoothScroll("#unity-container", 0);
+    setLink("http://stuvio.co/MahaVistaar_New/MSRDC_final/index.html");
+});
+
+
+var nt1 = document.querySelector(".nt1-card");
+var arrow1 = document.querySelector(".arrow1");
+var nt1_small = document.querySelector(".small-card-details");
+var nt1_big = document.querySelector(".big-card-details");
+
+var nt2 = document.querySelector(".nt2-card");
+var arrow2 = document.querySelector(".arrow2");
+var nt2_small = document.querySelector(".nt2-card .small-card-details");
+var nt2_big = document.querySelector(".nt2-card .big-card-details");
+
+var nt3 = document.querySelector(".nt3-card");
+var arrow3 = document.querySelector(".arrow3");
+var nt3_small = document.querySelector(".nt3-card .small-card-details");
+var nt3_big = document.querySelector(".nt3-card .big-card-details");
+
+var nt4 = document.querySelector(".nt4-card");
+var arrow4 = document.querySelector(".arrow4");
+var nt4_small = document.querySelector(".nt4-card .small-card-details");
+var nt4_big = document.querySelector(".nt4-card .big-card-details");
+
+var nt5 = document.querySelector(".nt5-card");
+var arrow5 = document.querySelector(".arrow5");
+var nt5_small = document.querySelector(".nt5-card .small-card-details");
+var nt5_big = document.querySelector(".nt5-card .big-card-details");
+
+var nt6 = document.querySelector(".nt6-card");
+var arrow6 = document.querySelector(".arrow6");
+var nt6_small = document.querySelector(".nt6-card .small-card-details");
+var nt6_big = document.querySelector(".nt6-card .big-card-details");
+
+
+var nt7 = document.querySelector(".nt7-card");
+var arrow7 = document.querySelector(".arrow7");
+var nt7_small = document.querySelector(".nt7-card .small-card-details");
+var nt7_big = document.querySelector(".nt7-card .big-card-details");
+
+
+var nt8 = document.querySelector(".nt8-card");
+var arrow8 = document.querySelector(".arrow8");
+var nt8_small = document.querySelector(".nt8-card .small-card-details");
+var nt8_big = document.querySelector(".nt8-card .big-card-details");
+
+
+var nt9 = document.querySelector(".nt9-card");
+var arrow9 = document.querySelector(".arrow9");
+var nt9_small = document.querySelector(".nt9-card .small-card-details");
+var nt9_big = document.querySelector(".nt9-card .big-card-details");
+
+
+var nt10 = document.querySelector(".nt10-card");
+var arrow10 = document.querySelector(".arrow10");
+var nt10_small = document.querySelector(".nt10-card .small-card-details");
+var nt10_big = document.querySelector(".nt10-card .big-card-details");
+
+
+var nt11 = document.querySelector(".nt11-card");
+var arrow11 = document.querySelector(".arrow11");
+var nt11_small = document.querySelector(".nt11-card .small-card-details");
+var nt11_big = document.querySelector(".nt11-card .big-card-details");
+
+var nt12 = document.querySelector(".nt12-card");
+var arrow12 = document.querySelector(".arrow12");
+var nt12_small = document.querySelector(".nt12-card .small-card-details");
+var nt12_big = document.querySelector(".nt12-card .big-card-details");
+
+var nt13 = document.querySelector(".nt13-card");
+var arrow13 = document.querySelector(".arrow13");
+var nt13_small = document.querySelector(".nt13-card .small-card-details");
+var nt13_big = document.querySelector(".nt13-card .big-card-details");
+
+
+var nt14 = document.querySelector(".nt14-card");
+var arrow14 = document.querySelector(".arrow14");
+var nt14_small = document.querySelector(".nt14-card .small-card-details");
+var nt14_big = document.querySelector(".nt14-card .big-card-details");
+
+
+var nt15 = document.querySelector(".nt15-card");
+var arrow15 = document.querySelector(".arrow15");
+var nt15_small = document.querySelector(".nt15-card .small-card-details");
+var nt15_big = document.querySelector(".nt15-card .big-card-details");
+
+
+var nt16 = document.querySelector(".nt16-card");
+var arrow16 = document.querySelector(".arrow16");
+var nt16_small = document.querySelector(".nt16-card .small-card-details");
+var nt16_big = document.querySelector(".nt16-card .big-card-details");
+
+
+var nt17 = document.querySelector(".nt17-card");
+var arrow17 = document.querySelector(".arrow17");
+var nt17_small = document.querySelector(".nt17-card .small-card-details");
+var nt17_big = document.querySelector(".nt17-card .big-card-details");
+
+
+
+var nt18 = document.querySelector(".nt18-card");
+var arrow18 = document.querySelector(".arrow18");
+var nt18_small = document.querySelector(".nt18-card .small-card-details");
+var nt18_big = document.querySelector(".nt18-card .big-card-details");
+
+var nt19 = document.querySelector(".nt19-card");
+var arrow19 = document.querySelector(".arrow19");
+var nt19_small = document.querySelector(".nt19-card .small-card-details");
+var nt19_big = document.querySelector(".nt19-card .big-card-details");
+
+
+
+var towns_gsap_tl = gsap.timeline({
+  scrollTrigger: {
+          trigger: ".experience",
+          start: "top center",
+        },
+})
+
+towns_gsap_tl.from(".town", {y: "4rem" , opacity: 0, ease: "power4.inOut", stagger: 0.2});
+
+
+
+
+function expand(town, smalldetails, bigdetails, arrow) {
+  town.style.height = "460px";
+  town.style.backgroundImage = "url(./assets/images/3D_Map.png)";
+  arrow.style.transform = "rotate(90deg)";
+  smalldetails.style.visibility = "hidden"
+  smalldetails.style.opacity = "0";
+  smalldetails.style.pointerEvents = "none";
+  bigdetails.style.visibility = "visible"
+  bigdetails.style.opacity = "1";
+  bigdetails.style.pointerEvents = "all";
+  // gsap.from(town, {css: {backgroundSize: "cover"}, ease:"linear", duration: 5});
+  
+}
+
+
+function shrink(town, smalldetails, bigdetails, arrow) {
+  town.style.height = "80px";
+  town.style.backgroundImage = "linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38)";
+  arrow.style.transform = "rotate(-90deg)";
+  bigdetails.style.visibility = "hidden"
+  bigdetails.style.opacity = "0";
+  bigdetails.style.pointerEvents = "none";
+  smalldetails.style.visibility = "visible"
+  smalldetails.style.opacity = "1";
+  smalldetails.style.pointerEvents = "all";
+}
+
+
+nt1.addEventListener("mouseover", function() {
+  expand(nt1, nt1_small, nt1_big, arrow1);
+  
+ 
+  // gsap.from(".nt1-card .big-card-details .container .row .col-lg-6 h5", {y: "-1rem", opacity: 0});
+
+
+})
+
+nt1.addEventListener("mouseout", function() {
+  shrink(nt1, nt1_small, nt1_big, arrow1);
+  // gsap.to(nt1, {css: {backgroundSize: "100%"}, ease:"ease.out", duration: 1});
+})
+
+
+nt2.addEventListener("mouseover", function() {
+  expand(nt2, nt2_small, nt2_big, arrow2);
+  // gsap.from(nt2, {css: {backgroundSize: "250%"}, ease:"power4.in", duration: 2});
+})
+
+nt2.addEventListener("mouseout", function() {
+  shrink(nt2, nt2_small, nt2_big, arrow2);
+  // gsap.to(nt1, {css: {backgroundSize: "100%"}, ease:"ease.out", duration: 1});
+})
+
+
+nt3.addEventListener("mouseover", function() {
+  expand(nt3, nt3_small, nt3_big, arrow3);
+  // gsap.from(nt3, {css: {backgroundSize: "350%"}, ease:"power4.in", duration: 2});
+})
+
+nt3.addEventListener("mouseout", function() {
+  shrink(nt3, nt3_small, nt3_big, arrow3);
+  // gsap.to(nt1, {css: {backgroundSize: "100%"}, ease:"ease.out", duration: 1});
+})
+
+
+nt4.addEventListener("mouseover", function() {
+  expand(nt4, nt4_small, nt4_big, arrow4);
+  // gsap.from(nt4, {css: {backgroundSize: "450%"}, ease:"power4.in", duration: 2});
+})
+
+nt4.addEventListener("mouseout", function() {
+  shrink(nt4, nt4_small, nt4_big, arrow4);
+  // gsap.to(nt1, {css: {backgroundSize: "100%"}, ease:"ease.out", duration: 1});
+})
+
+nt5.addEventListener("mouseover", function() {
+  expand(nt5, nt5_small, nt5_big, arrow5);
+  // gsap.from(nt5, {css: {backgroundSize: "550%"}, ease:"power4.in", duration: 2});
+})
+
+nt5.addEventListener("mouseout", function() {
+  shrink(nt5, nt5_small, nt5_big, arrow5);
+  // gsap.to(nt1, {css: {backgroundSize: "100%"}, ease:"ease.out", duration: 1});
+})
+
+nt6.addEventListener("mouseover", function() {
+  expand(nt6, nt6_small, nt6_big, arrow6);
+})
+
+nt6.addEventListener("mouseout", function() {
+  shrink(nt6, nt6_small, nt6_big, arrow6);
+})
+
+
+nt7.addEventListener("mouseover", function() {
+  expand(nt7, nt7_small, nt7_big, arrow7);
+})
+
+nt7.addEventListener("mouseout", function() {
+  shrink(nt7, nt7_small, nt7_big, arrow7);
+})
+
+
+nt8.addEventListener("mouseover", function() {
+  expand(nt8, nt8_small, nt8_big, arrow8);
+})
+
+nt8.addEventListener("mouseout", function() {
+  shrink(nt8, nt8_small, nt8_big, arrow8);
+})
+
+
+nt9.addEventListener("mouseover", function() {
+  expand(nt9, nt9_small, nt9_big, arrow9);
+})
+
+nt9.addEventListener("mouseout", function() {
+  shrink(nt9, nt9_small, nt9_big, arrow9);
+})
+
+
+nt10.addEventListener("mouseover", function() {
+  expand(nt10, nt10_small, nt10_big, arrow10);
+})
+
+nt10.addEventListener("mouseout", function() {
+  shrink(nt10, nt10_small, nt10_big, arrow10);
+})
+
+
+nt11.addEventListener("mouseover", function() {
+  expand(nt11, nt11_small, nt11_big, arrow11);
+})
+
+nt11.addEventListener("mouseout", function() {
+  shrink(nt11, nt11_small, nt11_big, arrow11);
+})
+
+nt12.addEventListener("mouseover", function() {
+  expand(nt12, nt12_small, nt12_big, arrow12);
+})
+
+nt12.addEventListener("mouseout", function() {
+  shrink(nt12, nt12_small, nt12_big, arrow12);
+})
+
+
+nt13.addEventListener("mouseover", function() {
+  expand(nt13, nt13_small, nt13_big, arrow13);
+})
+
+nt13.addEventListener("mouseout", function() {
+  shrink(nt13, nt13_small, nt13_big, arrow13);
+})
+
+
+nt14.addEventListener("mouseover", function() {
+  expand(nt14, nt14_small, nt14_big, arrow14);
+})
+
+nt14.addEventListener("mouseout", function() {
+  shrink(nt14, nt14_small, nt14_big, arrow14);
+})
+
+nt15.addEventListener("mouseover", function() {
+  expand(nt15, nt15_small, nt15_big, arrow15);
+})
+
+nt15.addEventListener("mouseout", function() {
+  shrink(nt15, nt15_small, nt15_big, arrow15);
+})
+
+nt16.addEventListener("mouseover", function() {
+  expand(nt16, nt16_small, nt16_big, arrow16);
+})
+
+nt16.addEventListener("mouseout", function() {
+  shrink(nt16, nt16_small, nt16_big, arrow16);
+})
+
+nt17.addEventListener("mouseover", function() {
+  expand(nt17, nt17_small, nt17_big, arrow17);
+})
+
+nt17.addEventListener("mouseout", function() {
+  shrink(nt17, nt17_small, nt17_big, arrow17);
+})
+
+nt18.addEventListener("mouseover", function() {
+  expand(nt18, nt18_small, nt18_big, arrow18);
+})
+
+nt18.addEventListener("mouseout", function() {
+  shrink(nt18, nt18_small, nt18_big, arrow18);
+})
+
+nt19.addEventListener("mouseover", function() {
+  expand(nt19, nt19_small, nt19_big, arrow19);
+})
+
+nt19.addEventListener("mouseout", function() {
+  shrink(nt19, nt19_small, nt19_big, arrow19);
+})
+
+
+
+    </script>
+  </body>
+</html>

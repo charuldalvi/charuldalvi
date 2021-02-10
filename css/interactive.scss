@@ -1,0 +1,2362 @@
+@import "variables";
+
+
+:root {
+  --scenePerspective: 1;
+  --scenePerspectiveOriginX: 50;
+  --scenePerspectiveOriginY: 30;
+  --itemZ: 2.5;
+  --cameraSpeed: 150; // Where 1 is the fastest
+  --cameraZ: 0;
+  --viewportHeight: 0;
+}
+
+.big-nav-bg {
+  width: 100%;
+  height: 100px;
+}
+
+#big-nav {
+  padding: 12px 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transform: translateY(-100px);
+
+  .town-names {
+    width: 250px;
+    height: 0px;
+    background-color: #13141b;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    top: 122%;
+    left: 69.2%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in;
+
+
+    .town-list {
+      height: 0px;
+        list-style: none;
+        opacity: 0;
+        visibility: hidden;
+        margin: 20px 20px 0 10px;
+        overflow-y: hidden;
+        transition: overflow-y .8s ease-in;
+
+      &:hover {
+        overflow-y: auto;
+      }
+
+
+        li {
+          color: $white-color;
+          margin: 5px 15px;
+          font-weight: 700;
+          padding: 8px;
+          cursor: pointer;
+          transition: color .2s ease-in;
+
+          &:hover {
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.45);
+            border-radius: 8px;
+            padding: 8px;
+          }
+
+        }
+    }
+  }
+}
+
+
+.front-reveal-layer {
+  width: 1285px;
+  height: 700px;
+  background-color: rgba($color: #242634, $alpha: 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+
+.main-container {
+  width: 1285px;
+  height: auto;
+  border-radius: 30px;
+  position: relative;
+}
+
+#frame {
+  z-index: 10;
+}
+
+.fullscreen-outer {
+  width: 60px;
+  height: 57px;
+  position: absolute;
+  bottom: 44px;
+  left: 30px;
+  background-image: $gradient;
+  opacity: 0.95;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .fullscreen-inner {
+    width: 40px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    transition: all 0.4s ease-in;
+  
+    &:hover {
+      background-color: rgba($color: #3E4345, $alpha: 0.95);
+    }
+
+  }
+
+}
+
+
+
+
+
+
+#unity-container {
+  height: auto;
+  margin-top: 20px;
+}
+
+
+.experience {
+  padding: 100px 0 100px 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  position: relative;
+
+  h1 {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: $rogan-bold;
+    margin-bottom: 20px;
+    color: $white-color;
+  }
+
+  .line-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    #firstLottie {
+      width: 25.7%; 
+      margin-left: 19%;
+    }
+    
+  }
+
+ 
+
+  .line-empty-container {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    background-color: $background-color;
+    border-bottom-left-radius: 130px;
+    border-bottom-right-radius: 130px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+.scroll-container {
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+  align-items: center;
+  height:100vh;
+  margin-top: 80px;
+}
+
+.module{
+  height:auto;
+  display:flex;
+  align-items: center;
+}
+
+.green{
+  width:720px;
+  padding: 100px 50px;
+
+
+  .city__text {
+    font-size: 6vw;
+    line-height: 0.8;
+    margin: 0 2vw 0 14vw;
+    text-transform: uppercase;
+    color: $white-color;
+    opacity: 0.1;
+  }
+}
+
+.yellow{
+  width:1250px;
+  padding: 100px 0px;
+}
+
+.purple{
+  width:1250px;
+  padding: 100px 0px;
+}
+
+.orange{
+  width:1250px;
+  padding: 100px 0px;
+}
+
+.blue{
+  width:1250px;
+  padding: 100px 0px;
+}
+
+.red{
+  width:800px;
+  padding: 100px 0px;
+
+  
+  .city__text {
+    font-size: 6vw;
+    line-height: 0.8;
+    margin: 0 10vw 0 5vw;
+    text-transform: uppercase;
+    color: $white-color;
+    opacity: 0.1;
+  }
+}
+
+
+.new-town-card {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  width: 250px;
+  height: 450px;
+  background-color: rgba($color: $background-color, $alpha: 1);
+  border: 1.5px solid #575764;
+  box-shadow: 0px 10px 20px 1px rgba($color: #000, $alpha: 0.6);
+  overflow: hidden;
+  transform: translate(0,0);
+  transition: 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 1s ease;
+    position: absolute;
+    border:2px solid rgba($color: $background-color, $alpha: 1);
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .img-one {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 1s ease;
+    position: absolute;
+    border:2px solid rgba($color: $background-color, $alpha: 1);
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../assets/images/new_map.png);
+    background-size: cover;
+    background-position: left 40%;
+    transition: all 1s ease;
+  }
+
+  .img-two {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 1s ease;
+    position: absolute;
+    border:2px solid rgba($color: $background-color, $alpha: 1);
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../assets/images/new_map.png);
+    background-size: cover;
+    background-position: left 100% top 100%;
+    transition: all 1s ease;
+  }
+  
+  
+  
+
+
+
+  .img-text {
+    border-radius: 15px;
+    border-top: 1.5px solid #686870;
+    background-color: rgba($color: $background-color, $alpha: 1);
+    box-shadow: 0px -5px 10px 1px rgba($color: #000, $alpha: 0.3);
+    padding: 10px 30px 20px 30px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0, 122px);
+    transition: 0.5s ease;
+    display: inline-block;
+    z-index: 1;
+
+
+    h2 {
+      color: rgba($color: $primary-color, $alpha: 1);
+      font-size: 40px;
+      font-family: $rogan-bold;
+    }
+
+    .nt-key {
+      color: $white-color;
+      opacity: 0.5;
+      margin-bottom: 0;
+    }
+
+
+    .nt-value {
+      color: $white-color;
+      margin-bottom: 5px;
+    }
+
+
+    .d-key {
+      color: $white-color;
+      opacity: 0.5;
+      margin-bottom: 0;
+      transition: all 0.1s ease-in;
+      margin-top: 4px;
+    }
+
+    .d-value {
+      color: $white-color;
+      margin-bottom: 5px;
+      transition: all 0.1s ease-in;
+    }
+
+    .btn-outline-success {
+      width: 186px;
+      color: $white-color;
+      border-radius: 10px;
+      box-shadow: 2px 5px 10px 1px rgba($color: #000, $alpha: 0.3);
+      transition: all 0.3s ease-in;
+    }
+
+
+  }
+
+
+  &:hover {
+    transform: translate(0, -40px);
+
+
+    img {
+      height: 300px;
+    }
+
+
+    .img-one {
+      height: 300px;
+    }
+    .img-two {
+      height: 300px;
+    }
+    
+
+    .img-text {
+      transform: translate(0,0);
+    }
+
+  }
+
+}
+
+
+.custom-accordion {
+  margin: 100px 0 20px 0;
+  
+  
+
+  .nt1-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+
+
+      .arrow1 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+      
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt2-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+    
+          
+      .arrow2 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt3-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+
+      .arrow3 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+      
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt4-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+      
+
+      .arrow4 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+      
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt5-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+
+      .arrow5 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+      
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt6-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+
+      .arrow6 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+      
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt7-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow7 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt8-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow8 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt9-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow9 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt10-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow10 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt11-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow11 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt12-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow12 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt13-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow13 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt14-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow14 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }  
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt15-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow15 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt16-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow16 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt17-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+  
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow17 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h5 {
+        color: $white-color;
+      }
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  
+  .nt18-card {
+    background-image: linear-gradient(to left, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+
+
+      .arrow18 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+      
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+      h5 {
+        color: $white-color;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+  .nt19-card {
+    background-image: linear-gradient(to right, rgba(84, 88, 112, 0.2), #2A2C38);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    height: 80px;
+    transition: all .3s ease;
+
+
+    .small-card-details{
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transition: all 0.5s ease-out;
+
+      .town-id {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-medium;
+      }
+  
+      .nt-value {
+        color: $white-color;
+        font-size: 30px;
+        font-family: $rogan-medium;
+        text-transform: uppercase;
+      }
+  
+      .arrow19 {
+        transform: rotate(-90deg);
+        transition: all 0.3s ease;
+      }
+  
+    }
+
+
+
+    .big-card-details {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(0,20%);
+      transition: all 0.1s ease-out;
+
+      h4 {
+        font-size: 40px;
+        color: $white-color;
+        opacity: 0.8;
+        text-transform: uppercase;
+      }
+
+
+      h5 {
+        color: $white-color;
+      }
+
+
+      h2 {
+        color: rgba($color: $primary-color, $alpha: 1);
+        font-size: 40px;
+        font-family: $rogan-bold;
+      }
+  
+
+
+      .nt-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+  
+  
+      .nt-value {
+        color: $white-color;
+        margin-bottom: 5px;
+      }
+  
+  
+      .d-key {
+        color: $white-color;
+        opacity: 0.7;
+        margin-bottom: 0;
+        transition: all 0.1s ease-in;
+        margin-top: 4px;
+      }
+  
+      .d-value {
+        color: $white-color;
+        margin-bottom: 5px;
+        transition: all 0.1s ease-in;
+      }
+  
+      
+    }
+
+
+  }  
+
+
+  
+  
+ 
+}
+
+
+
+

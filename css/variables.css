@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Planer-Regular";
+  src: url(../assets/fonts/planer/Planer-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Bold";
+  src: url(../assets/fonts/Rogan/Rogan-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Medium";
+  src: url(../assets/fonts/Rogan/Rogan-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Regular";
+  src: url(../assets/fonts/Rogan/Rogan-Regular.ttf);
+}
+/*# sourceMappingURL=variables.css.map */

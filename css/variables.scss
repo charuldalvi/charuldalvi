@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Planer-Regular";
+  src: url(../assets/fonts/planer/Planer-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Bold";
+  src: url(../assets/fonts/Rogan/Rogan-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Medium";
+  src: url(../assets/fonts/Rogan/Rogan-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Rogan-Regular";
+  src: url(../assets/fonts/Rogan/Rogan-Regular.ttf);
+}
+
+// fonts
+$planer: Planer-Regular, sans-serif;
+$rogan-bold: Rogan-Bold, sans-serif;
+$rogan-medium: Rogan-Medium, sans-serif;
+$rogan-regular: Rogan-Regular, sans-serif;
+
+// colors
+$background-color: #13141b;
+$primary-color: rgb(252, 138, 56);
+$secondary-color: #1db954;
+$white-color: #fff;
+$gradient: linear-gradient(#13141B, #242634);
+
+$town1Size: 28px;
+$blue: #fc8a38;
+$transparentBlue: rgba(95, 139, 250, 0);
