@@ -960,7 +960,7 @@
 
       function getIP() {
        
-        fetch("http://api.ipify.org/?format=json")
+        fetch("https://api.ipify.org?format=json")
           .then((res) => res.json())
           .then((data) => {
             ip = data.ip
