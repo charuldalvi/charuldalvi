@@ -978,6 +978,7 @@
           .then((data) => {
             countryName = data.country_name;
             localStorage.setItem("country", countryName);
+            console.log(countryName);
             getParaCourses();
             getPreClinicalCourses();
             getClinicalCourses();
