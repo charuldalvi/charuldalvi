@@ -957,29 +957,34 @@
 
       const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
+      let countryName = localStorage.getItem("country");
 
-      function getIP() {
-       
-        fetch("https://api.ipify.org?format=json")
+      // function getIP() {
+      //   fetch("https://api.ipify.org?format=json")
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       ip = data.ip
+      //       getGeolocationDetails(ip)
+      //     });
+      // }
+
+      // getIP();
+
+      function getGeolocationDetails() {
+        fetch(
+          "https://api.ipdata.co?api-key=682e6c9a315f6a0d0ef4832d863b5145471dc1ff683a6544aa979ad6"
+        )
           .then((res) => res.json())
           .then((data) => {
-            ip = data.ip
-            getGeolocationDetails(ip)
+            countryName = data.country_name;
+            localStorage.setItem("country", countryName);
+            getParaCourses();
+            getPreClinicalCourses();
+            getClinicalCourses();
           });
       }
 
-      getIP();
-
-      
-
-      function getGeolocationDetails(ip) {
-        fetch(`https://api.ipgeolocationapi.com/geolocate/${ip}`)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          });
-      }
-
+      getGeolocationDetails();
 
       function getParaCourses() {
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -1020,8 +1025,10 @@
                               }</span></p>
                               <div class="row mt-3 offers_section">
                                 
-                                ${details.OfferList.map(function (offers) {
-                                  return `<div class="col-6 d-flex flex-column justify-content-center ">
+                                ${
+                                  countryName != "India"
+                                    ? details.MyrList.map(function (offers) {
+                                        return `<div class="col-6 d-flex flex-column justify-content-center ">
                                     <p  id="duration_text">Duration: <span>${offers.OfferName}</span></p>
                                       <h6>₹ ${offers.CourseAmount}</h6>
                                       <p class="gst_text">Plus 18% GST</p>
@@ -1029,11 +1036,18 @@
                                   <div class="col-6 text-right  d-flex flex-column justify-content-center  ">
                                       <a target="_blank" href="${offers.RazorPaymentLink}" class="btn btn-primary">Buy</a>
                                   </div>`;
-                                }).join("")}
-
-                                  
-                                  
-                                  
+                                      }).join("")
+                                    : details.OfferList.map(function (offers) {
+                                        return `<div class="col-6 d-flex flex-column justify-content-center ">
+                                    <p  id="duration_text">Duration: <span>${offers.OfferName}</span></p>
+                                      <h6>RM ${offers.CourseAmount}</h6>
+                                      <p class="gst_text">Plus 18% GST</p>
+                                  </div>
+                                  <div class="col-6 text-right  d-flex flex-column justify-content-center  ">
+                                      <a target="_blank" href="${offers.RazorPaymentLink}" class="btn btn-primary">Buy</a>
+                                  </div>`;
+                                      }).join("")
+                                }  
                               </div>
                         </div>
                       </div>
@@ -1085,8 +1099,10 @@
                               }</span></p>
                               <div class="row mt-3 offers_section">
                                
-                                ${details.OfferList.map(function (offers) {
-                                  return `<div class="col-6 d-flex flex-column justify-content-center ">
+                                ${
+                                  countryName != "India"
+                                    ? details.MyrList.map(function (offers) {
+                                        return `<div class="col-6 d-flex flex-column justify-content-center ">
                                     <p  id="duration_text">Duration: <span>${offers.OfferName}</span></p>
                                       <h6>₹ ${offers.CourseAmount}</h6>
                                       <p class="gst_text">Plus 18% GST</p>
@@ -1094,7 +1110,18 @@
                                   <div class="col-6 text-right  d-flex flex-column justify-content-center  ">
                                       <a target="_blank" href="${offers.RazorPaymentLink}" class="btn btn-primary">Buy</a>
                                   </div>`;
-                                }).join("")}
+                                      }).join("")
+                                    : details.OfferList.map(function (offers) {
+                                        return `<div class="col-6 d-flex flex-column justify-content-center ">
+                                    <p  id="duration_text">Duration: <span>${offers.OfferName}</span></p>
+                                      <h6>RM ${offers.CourseAmount}</h6>
+                                      <p class="gst_text">Plus 18% GST</p>
+                                  </div>
+                                  <div class="col-6 text-right  d-flex flex-column justify-content-center  ">
+                                      <a target="_blank" href="${offers.RazorPaymentLink}" class="btn btn-primary">Buy</a>
+                                  </div>`;
+                                      }).join("")
+                                }  
 
                                   
                                   
@@ -1119,7 +1146,6 @@
         )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             let output = '<div class="row d-flex flex-wrap individual_course">';
 
             var filteredClinical = data.filter(function (detailsObj) {
@@ -1150,8 +1176,10 @@
                               }</span></p>
                               <div class="row mt-3 offers_section">
                                 
-                                ${details.OfferList.map(function (offers) {
-                                  return `<div class="col-6 d-flex flex-column justify-content-center ">
+                                ${
+                                  countryName != "India"
+                                    ? details.MyrList.map(function (offers) {
+                                        return `<div class="col-6 d-flex flex-column justify-content-center ">
                                     <p  id="duration_text">Duration: <span>${offers.OfferName}</span></p>
                                       <h6>₹ ${offers.CourseAmount}</h6>
                                       <p class="gst_text">Plus 18% GST</p>
@@ -1159,7 +1187,18 @@
                                   <div class="col-6 text-right  d-flex flex-column justify-content-center  ">
                                       <a target="_blank" href="${offers.RazorPaymentLink}" class="btn btn-primary">Buy</a>
                                   </div>`;
-                                }).join("")}
+                                      }).join("")
+                                    : details.OfferList.map(function (offers) {
+                                        return `<div class="col-6 d-flex flex-column justify-content-center ">
+                                    <p  id="duration_text">Duration: <span>${offers.OfferName}</span></p>
+                                      <h6>RM ${offers.CourseAmount}</h6>
+                                      <p class="gst_text">Plus 18% GST</p>
+                                  </div>
+                                  <div class="col-6 text-right  d-flex flex-column justify-content-center  ">
+                                      <a target="_blank" href="${offers.RazorPaymentLink}" class="btn btn-primary">Buy</a>
+                                  </div>`;
+                                      }).join("")
+                                }  
 
                                   
                                   
@@ -1235,9 +1274,6 @@
           .catch((e) => console.log(e));
       }
 
-      getParaCourses();
-      getPreClinicalCourses();
-      getClinicalCourses();
       getPackagesCourses();
     </script>
   </body>
